@@ -1,7 +1,11 @@
 #ifndef ABB_H
 #define ABB_H
 
+#include <stddef.h>
+#include <stdbool.h>
+
 typedef struct abb abb_t;
+typedef struct abb_nodo abb_nodo_t;
 typedef struct abb_iter abb_iter_t;
 
 typedef int (*abb_comparar_clave_t) (const char *, const char *);
