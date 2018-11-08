@@ -45,8 +45,6 @@ void vector_desordenar(char* claves[], int* valores[], size_t largo){
 /* ******************************************************************
  *                        PRUEBAS UNITARIAS
  * *****************************************************************/
-
-
 static void prueba_crear_abb_vacio() {
     abb_t* arbol = abb_crear(strcmp, NULL);
 
@@ -59,7 +57,7 @@ static void prueba_crear_abb_vacio() {
     abb_destruir(arbol);
     printf("\n");
 }
-/*
+
 static void prueba_iterar_abb_vacio() {
     abb_t* arbol = abb_crear(strcmp, NULL);
     abb_iter_t* iter = abb_iter_in_crear(arbol);
@@ -72,7 +70,7 @@ static void prueba_iterar_abb_vacio() {
     abb_destruir(arbol);
     printf("\n");
 }
-*/
+
 static void prueba_abb_insertar() {
 	
     abb_t* arbol = abb_crear(strcmp, NULL);
@@ -348,7 +346,6 @@ static void prueba_abb_valor_null() {
     printf("\n");
 }
 
-
 static void prueba_abb_volumen(size_t largo) {
 	
 	abb_t* arbol=abb_crear(strcmp,NULL);
@@ -404,10 +401,7 @@ static void prueba_abb_volumen(size_t largo) {
 	printf("\n");
 }
 
-/*
-
-static ssize_t buscar(const char* clave, char* claves[], size_t largo)
-{
+static ssize_t buscar(const char* clave, char* claves[], size_t largo) {
     for (size_t i = 0; i < largo; i++) {
         if (strcmp(clave, claves[i]) == 0) return (ssize_t) i;
     }
@@ -526,11 +520,10 @@ static void prueba_abb_iterar_volumen(size_t largo) {
 	printf("\n");
 }
 
-*/
 void pruebas_abb_alumno(){
 	
 	prueba_crear_abb_vacio();
-	//prueba_iterar_abb_vacio();
+	prueba_iterar_abb_vacio();
 	prueba_abb_insertar();
 	prueba_abb_inserto_y_borro_destruyo_dato();
 	prueba_abb_reemplazar();
@@ -539,8 +532,8 @@ void pruebas_abb_alumno(){
 	prueba_abb_clave_vacia();
 	prueba_abb_valor_null();
 	prueba_abb_inserto_y_borro();
-	prueba_abb_volumen(20);
-	//prueba_abb_iterar();
-	//prueba_abb_iterar_volumen(5000);
-	//prueba_abb_inserto_y_borro_destruyo_dato();
+	prueba_abb_volumen(5000);
+	prueba_abb_iterar();
+	prueba_abb_iterar_volumen(5000);
+	prueba_abb_inserto_y_borro_destruyo_dato();
 }
